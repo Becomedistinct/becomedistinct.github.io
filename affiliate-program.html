@@ -1,0 +1,1775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Referral Partner Program — Distinct Digital Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+
+/* ── Reset ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+img { display: block; max-width: 100%; }
+
+/* ── Tokens ── */
+:root {
+  --navy:        #1d4e8f;
+  --navy-deep:   #0f1e35;
+  --navy-mid:    #163a6b;
+  --navy-tint:   #edf2f9;
+  --navy-rule:   #1e3a5e;
+  --red:         #b8232e;
+  --red-dark:    #9a1c26;
+  --gold:        #c9a84c;
+  --green:       #2d8a4e;
+  --green-dark:  #1f6337;
+  --green-tint:  #edf7f0;
+  --green-rule:  #b8e0c9;
+  --ink:         #1a1a1a;
+  --muted:       #5c5650;
+  --light-muted: #888380;
+  --border:      #ddd9d2;
+  --cream:       #faf8f3;
+  --warm:        #f3efe8;
+  --white:       #ffffff;
+  --red-tint:    #fdf1f1;
+  --serif: 'DM Serif Display', Georgia, serif;
+  --sans:  'DM Sans', system-ui, sans-serif;
+}
+
+/* ── Base ── */
+body {
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Utility ── */
+.eyebrow {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 14px;
+}
+.eyebrow.red  { color: var(--red); }
+.eyebrow.gold { color: var(--gold); }
+.eyebrow.white { color: rgba(255,255,255,0.65); }
+
+h2.display {
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.15;
+  color: var(--navy-deep);
+}
+
+.section-intro {
+  font-size: 17px;
+  color: var(--muted);
+  max-width: 640px;
+  line-height: 1.75;
+}
+
+/* ── Nav ── */
+.topbar {
+  background: var(--navy-deep);
+  padding: 11px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(to right, var(--red) 33%, #fff 33%, #fff 66%, var(--navy) 66%) 1;
+}
+.topbar-brand {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--gold);
+  text-decoration: none;
+}
+.topbar-link {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: color .2s;
+}
+.topbar-link:hover { color: var(--white); }
+
+/* ── HERO ── */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 92vh;
+}
+
+.hero-left {
+  background: var(--navy-deep);
+  padding: 80px 56px 80px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-left::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 5px;
+  background: linear-gradient(to bottom,
+    var(--red) 33.3%,
+    var(--white) 33.3%, var(--white) 66.6%,
+    var(--navy) 66.6%
+  );
+}
+
+.hero-left .eyebrow { color: var(--gold); margin-bottom: 28px; }
+
+.hero-headline {
+  font-family: var(--serif);
+  font-size: clamp(34px, 4vw, 52px);
+  line-height: 1.1;
+  color: var(--white);
+  margin-bottom: 28px;
+}
+
+.hero-sub {
+  font-size: 17px;
+  color: rgba(255,255,255,0.62);
+  line-height: 1.75;
+  margin-bottom: 40px;
+  max-width: 420px;
+}
+
+.hero-cta {
+  display: inline-block;
+  background: var(--red);
+  color: var(--white);
+  padding: 15px 32px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  transition: background .2s;
+  align-self: flex-start;
+}
+.hero-cta:hover { background: var(--red-dark); }
+
+.hero-cta-note {
+  margin-top: 12px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.38);
+}
+
+.hero-right {
+  background: var(--cream);
+  padding: 80px 48px 80px 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+
+.hero-right-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--light-muted);
+  margin-bottom: 8px;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.stat-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 22px 20px;
+}
+
+.stat-card .val {
+  font-family: var(--serif);
+  font-size: 34px;
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.stat-card .val.red  { color: var(--red); }
+.stat-card .val.gold { color: var(--gold); }
+.stat-card .val.green { color: var(--green); }
+
+.stat-card .lbl {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.hero-right hr {
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+.who-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.who-chip {
+  background: var(--navy-tint);
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(29,78,143,0.15);
+}
+
+/* ── PROBLEM SECTION ── */
+.problem {
+  background: var(--warm);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 80px 48px;
+}
+
+.problem-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.problem-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 28px 24px;
+  border-left: 4px solid var(--red);
+}
+
+.problem-card h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.problem-card p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+/* ── GUIDE SECTION ── */
+.guide {
+  padding: 88px 48px;
+  background: var(--white);
+}
+
+.guide-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.guide-text h2 { margin-bottom: 20px; }
+.guide-text p {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+
+.guide-points {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.guide-point {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.guide-point-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--navy-tint);
+  border: 1px solid rgba(29,78,143,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 18px;
+}
+
+.guide-point-body h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.guide-point-body p {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ── PACKAGES SECTION ── */
+.packages {
+  background: var(--cream);
+  border-top: 1px solid var(--border);
+  padding: 88px 48px;
+}
+
+.packages-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.packages-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: end;
+  margin-bottom: 48px;
+}
+
+.packages-intro .section-intro {
+  margin-top: 16px;
+}
+
+.pkg-reco-note {
+  background: var(--navy-tint);
+  border: 1px solid rgba(29,78,143,0.15);
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.pkg-reco-note h4 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.pkg-reco-note p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+/* Package grid */
+.pkg-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.pkg-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.pkg-head {
+  padding: 24px 28px 20px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.pkg-head-left { flex: 1; }
+
+.pkg-tier {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+.tier-starter   { background: rgba(29,78,143,.1);  color: var(--navy); }
+.tier-launch    { background: rgba(45,138,78,.1);  color: var(--green-dark); }
+.tier-command   { background: rgba(194,92,26,.1);  color: #9a3c10; }
+.tier-elite     { background: rgba(201,168,76,.15); color: #8a6820; }
+
+.pkg-name {
+  font-family: var(--serif);
+  font-size: 22px;
+  color: var(--ink);
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.pkg-tag {
+  font-size: 12px;
+  color: var(--light-muted);
+  font-style: italic;
+}
+
+.pkg-price-block { text-align: right; white-space: nowrap; }
+
+.pkg-price {
+  font-family: var(--serif);
+  font-size: 28px;
+  color: var(--navy-deep);
+  line-height: 1;
+}
+
+.pkg-price span {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--light-muted);
+}
+
+.pkg-earn-badge {
+  margin-top: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--green-dark);
+}
+
+.pkg-body {
+  padding: 24px 28px;
+}
+
+.pkg-pillars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.pkg-pillar {
+  background: var(--navy-tint);
+  color: var(--navy);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid rgba(29,78,143,.12);
+}
+
+.pkg-features {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 16px;
+  margin-bottom: 20px;
+}
+
+.pkg-features li {
+  font-size: 13px;
+  color: var(--muted);
+  padding: 5px 0 5px 18px;
+  position: relative;
+  border-bottom: 1px solid var(--border);
+  line-height: 1.45;
+}
+
+.pkg-features li:last-child,
+.pkg-features li:nth-last-child(2):nth-child(odd) {
+  border-bottom: none;
+}
+
+.pkg-features li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--navy);
+  opacity: .3;
+}
+
+.pkg-features li strong {
+  color: var(--ink);
+  font-weight: 600;
+  display: block;
+  font-size: 12px;
+}
+
+.pkg-best-for {
+  background: var(--warm);
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+  border: 1px solid var(--border);
+}
+
+.pkg-best-for strong {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+/* accent bars on cards */
+.pkg-card.starter .pkg-head  { border-top: 3px solid var(--navy); }
+.pkg-card.launch  .pkg-head  { border-top: 3px solid var(--green); }
+.pkg-card.command .pkg-head  { border-top: 3px solid #c25c1a; }
+.pkg-card.elite   .pkg-head  { border-top: 3px solid var(--gold); }
+
+/* ── EARN SECTION ── */
+.earn {
+  padding: 88px 48px;
+  background: var(--white);
+}
+
+.earn-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.earn-header {
+  max-width: 640px;
+  margin-bottom: 48px;
+}
+.earn-header h2 { margin-bottom: 16px; }
+.earn-header p {
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.earn-streams {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 56px;
+}
+
+.earn-stream {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.earn-stream-head {
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.earn-stream.direct .earn-stream-head  { background: var(--green-tint); border-bottom: 1px solid var(--green-rule); }
+.earn-stream.network .earn-stream-head { background: var(--navy-tint);  border-bottom: 1px solid rgba(29,78,143,.15); }
+
+.earn-pct {
+  font-family: var(--serif);
+  font-size: 56px;
+  line-height: 1;
+}
+.earn-stream.direct  .earn-pct { color: var(--green); }
+.earn-stream.network .earn-pct { color: var(--navy); }
+
+.earn-stream-head-text h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.earn-stream-head-text p {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.earn-stream-body {
+  background: var(--white);
+  padding: 24px 32px;
+}
+
+.earn-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.earn-table tr {
+  border-bottom: 1px solid var(--border);
+}
+.earn-table tr:last-child { border-bottom: none; }
+
+.earn-table td {
+  padding: 9px 0;
+  color: var(--muted);
+}
+
+.earn-table td:last-child {
+  text-align: right;
+  font-weight: 700;
+  font-size: 15px;
+}
+.earn-stream.direct  .earn-table td:last-child { color: var(--green); }
+.earn-stream.network .earn-table td:last-child { color: var(--navy); }
+
+/* ── COMMISSION TABLE ── */
+.commission-section {
+  background: var(--warm);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 80px 48px;
+}
+
+.commission-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.commission-inner h2 { margin-bottom: 12px; }
+.commission-inner .section-intro { margin-bottom: 40px; }
+
+.comm-table-wrap {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.comm-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+}
+
+.comm-table thead tr {
+  background: var(--navy-deep);
+}
+
+.comm-table th {
+  padding: 14px 20px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+}
+
+.comm-table th.col-direct  { color: rgba(180,230,200,0.9); }
+.comm-table th.col-network { color: rgba(160,200,240,0.9); }
+
+.comm-table tbody tr {
+  border-bottom: 1px solid var(--border);
+}
+
+.comm-table tbody tr:last-child { border-bottom: none; }
+.comm-table tbody tr:nth-child(even) { background: var(--cream); }
+
+.comm-table td {
+  padding: 18px 20px;
+  vertical-align: middle;
+}
+
+.comm-plan-name {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--ink);
+}
+.comm-plan-desc {
+  font-size: 12px;
+  color: var(--light-muted);
+  margin-top: 2px;
+  font-style: italic;
+}
+
+.comm-price {
+  font-family: var(--serif);
+  font-size: 22px;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.comm-direct {
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--green);
+  white-space: nowrap;
+}
+
+.comm-network {
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--navy);
+  white-space: nowrap;
+}
+
+.comm-note {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--light-muted);
+  font-style: italic;
+}
+
+/* ── MATH SECTION ── */
+.math-section {
+  background: var(--navy-deep);
+  padding: 88px 48px;
+  position: relative;
+}
+
+.math-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(to right, var(--red) 33%, white 33%, white 66%, var(--navy) 66%);
+}
+
+.math-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.math-inner .eyebrow { color: var(--gold); }
+
+.math-inner h2 {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3.5vw, 42px);
+  color: var(--white);
+  margin-bottom: 12px;
+  line-height: 1.15;
+}
+
+.math-inner > p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 48px;
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+.math-scenarios {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.math-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 36px 32px;
+}
+
+.math-card h3 {
+  font-family: var(--serif);
+  font-size: 19px;
+  color: var(--gold);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.math-card .scenario-sub {
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 24px;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.math-rows {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.math-rows tr {
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.math-rows tr:last-child { border-bottom: none; }
+
+.math-rows td {
+  padding: 10px 0;
+  font-size: 14px;
+  color: rgba(255,255,255,0.55);
+  vertical-align: top;
+}
+
+.math-rows td:last-child {
+  text-align: right;
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
+  white-space: nowrap;
+}
+
+.math-rows tr.sub td {
+  color: rgba(120,160,210,0.8);
+  font-size: 13px;
+  padding-left: 16px;
+}
+
+.math-rows tr.math-total td {
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 17px;
+  border-top: 2px solid rgba(201,168,76,0.3);
+  padding-top: 16px;
+}
+
+.math-note {
+  background: rgba(201,168,76,0.06);
+  border: 1px solid rgba(201,168,76,0.18);
+  border-radius: 10px;
+  padding: 22px 28px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.75;
+}
+.math-note strong { color: var(--gold); }
+
+/* ── HOW IT WORKS ── */
+.how {
+  padding: 88px 48px;
+  background: var(--white);
+  border-top: 1px solid var(--border);
+}
+
+.how-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.how-inner h2 { margin-bottom: 12px; }
+.how-inner > .section-intro { margin-bottom: 48px; }
+
+.how-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.how-step {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px 24px;
+}
+
+.step-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--navy-deep);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.how-step h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+
+.how-step p {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+/* ── TRUST ── */
+.trust {
+  background: var(--warm);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 72px 48px;
+}
+
+.trust-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+}
+
+.trust-item h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.trust-item h4::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 3px;
+  background: var(--navy);
+  border-radius: 2px;
+}
+
+.trust-item p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ── CTA ── */
+.cta-section {
+  background: var(--navy-deep);
+  padding: 88px 48px;
+  text-align: center;
+  position: relative;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(to right, var(--red) 33%, white 33%, white 66%, var(--navy) 66%);
+}
+
+.cta-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-inner h2 {
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 42px);
+  color: var(--white);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.cta-inner p {
+  font-size: 17px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.75;
+  margin-bottom: 36px;
+}
+
+.cta-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 36px;
+}
+
+.cta-pill {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.75);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 7px 16px;
+  border-radius: 20px;
+}
+
+.cta-btn {
+  display: inline-block;
+  background: var(--red);
+  color: var(--white);
+  padding: 17px 44px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background .2s;
+}
+.cta-btn:hover { background: var(--red-dark); }
+
+.cta-sub {
+  display: block;
+  margin-top: 14px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.35);
+}
+
+/* ── FAQ ── */
+.faq {
+  padding: 88px 48px;
+  background: var(--white);
+}
+
+.faq-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.faq-inner h2 { margin-bottom: 48px; }
+
+.faq-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 48px;
+}
+
+.faq-item {
+  padding: 22px 0;
+  border-bottom: 1px solid var(--border);
+}
+.faq-item:first-child { border-top: 1px solid var(--border); }
+
+.faq-q {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.faq-a {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ── FOOTER ── */
+.site-footer {
+  background: var(--navy-deep);
+  padding: 32px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--navy-rule);
+}
+
+.footer-brand {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.5px;
+}
+
+.footer-info {
+  font-size: 12px;
+  color: rgba(255,255,255,0.35);
+  text-align: center;
+}
+
+.footer-contact a {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-left::after { display: none; }
+  .hero-left { padding: 64px 32px; }
+  .hero-right { padding: 48px 32px; }
+  .guide-inner { grid-template-columns: 1fr; gap: 40px; }
+  .packages-intro { grid-template-columns: 1fr; }
+  .earn-streams { grid-template-columns: 1fr; }
+  .math-scenarios { grid-template-columns: 1fr; }
+  .trust-inner { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .problem, .guide, .packages, .earn, .commission-section,
+  .math-section, .how, .trust, .cta-section, .faq {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .two-col { grid-template-columns: 1fr; }
+  .pkg-grid { grid-template-columns: 1fr; }
+  .how-steps { grid-template-columns: 1fr 1fr; }
+  .faq-cols { grid-template-columns: 1fr; }
+  .trust-inner { grid-template-columns: 1fr; }
+  .site-footer { flex-direction: column; gap: 12px; text-align: center; }
+  .stat-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .how-steps { grid-template-columns: 1fr; }
+  .pkg-features { grid-template-columns: 1fr; }
+  .stat-grid { grid-template-columns: 1fr; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ── TOPBAR ── -->
+<nav class="topbar">
+  <a href="political-services.html" class="topbar-brand">DISTINCT DIGITAL SERVICES</a>
+  <a href="political-services.html" class="topbar-link">← Back to Campaign Services</a>
+</nav>
+
+
+<!-- ══════════════════════════════════════
+     HERO — Partner as Hero
+══════════════════════════════════════ -->
+<section class="hero">
+
+  <div class="hero-left">
+    <span class="eyebrow">Political Campaign Referral Program</span>
+    <h1 class="hero-headline">You already have the most valuable thing in politics:<br>trusted relationships.</h1>
+    <p class="hero-sub">Campaigns you know need a website, a phone system, email marketing, and social media. You make the introduction. We handle everything. You earn every month they stay — automatically.</p>
+    <a href="#apply" class="hero-cta">Apply as a Referral Partner — Free</a>
+    <span class="hero-cta-note">Instant approval · No minimums · Paid by the 15th every month</span>
+  </div>
+
+  <div class="hero-right">
+    <p class="hero-right-label">What this looks like in real numbers</p>
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="val">10%</div>
+        <div class="lbl">of their monthly plan, every month they stay. Your referral, recurring income.</div>
+      </div>
+      <div class="stat-card">
+        <div class="val green">5%</div>
+        <div class="lbl">on every campaign referred by partners you recruit into the program.</div>
+      </div>
+      <div class="stat-card">
+        <div class="val red">$1,800</div>
+        <div class="lbl">From 3 Campaign Command referrals over one 10-month election cycle.</div>
+      </div>
+      <div class="stat-card">
+        <div class="val gold">$8,640</div>
+        <div class="lbl">Two cycles with direct referrals and a small partner network. No cap.</div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div>
+      <p class="hero-right-label">Built for people already in the political world</p>
+      <div class="who-chips">
+        <span class="who-chip">Campaign Managers</span>
+        <span class="who-chip">Political Consultants</span>
+        <span class="who-chip">County Party Chairs</span>
+        <span class="who-chip">Fundraisers</span>
+        <span class="who-chip">Strategists</span>
+        <span class="who-chip">Elected Officials</span>
+        <span class="who-chip">Civic Leaders</span>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ══════════════════════════════════════
+     PROBLEM — The hero's world
+══════════════════════════════════════ -->
+<section class="problem">
+  <div class="problem-inner">
+    <span class="eyebrow">The Problem</span>
+    <h2 class="display">Every introduction you make is already worth something.<br>It's just not being counted.</h2>
+    <p class="section-intro" style="margin-top:16px;">When a candidate you know asks who to use for their website or their digital — that's a referral. Right now, that value disappears into a handshake. Here's what campaigns you know are actually dealing with:</p>
+
+    <div class="two-col">
+      <div class="problem-card">
+        <h4>No website — or a bad one</h4>
+        <p>Most local candidates launch with a free Wix site or nothing at all. It costs them credibility with donors and voters on day one. They need a real campaign site, fast.</p>
+      </div>
+      <div class="problem-card">
+        <h4>No digital infrastructure</h4>
+        <p>Email lists in Gmail. Phone trees in spreadsheets. Social managed by a volunteer who might disappear. There's no system — and when the campaign heats up, the cracks show.</p>
+      </div>
+      <div class="problem-card">
+        <h4>No one managing their digital</h4>
+        <p>Campaigns know they need social media, email, and paid ads. But no one on staff has the time or skillset to run them properly — and hiring a dedicated digital director is expensive.</p>
+      </div>
+      <div class="problem-card">
+        <h4>No trusted vendor to turn to</h4>
+        <p>Campaign managers get pitched constantly by generic marketing agencies. They want a recommendation from someone they trust — someone who actually understands political campaigns.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     GUIDE — Who we are
+══════════════════════════════════════ -->
+<section class="guide">
+  <div class="guide-inner">
+
+    <div class="guide-text">
+      <span class="eyebrow">The Guide</span>
+      <h2 class="display">We're the team campaigns trust — because we built everything around how campaigns actually run.</h2>
+      <p>Distinct Digital Services isn't a generic marketing agency that also does campaigns. Every plan we offer — the website, the phone system, the email marketing, the social media — is built and configured around how political campaigns work. Not adapted from a small business template.</p>
+      <p>You stay the trusted advisor. We're the team behind the curtain. When you refer a campaign to us, we never market to them directly — your relationship stays yours.</p>
+    </div>
+
+    <div class="guide-points">
+      <div class="guide-point">
+        <div class="guide-point-icon">🌐</div>
+        <div class="guide-point-body">
+          <h4>Built specifically for campaigns</h4>
+          <p>Campaign websites, supporter CRMs, phone lines, and email tools configured for how political campaigns run — not repurposed small business software.</p>
+        </div>
+      </div>
+      <div class="guide-point">
+        <div class="guide-point-icon">⚙️</div>
+        <div class="guide-point-body">
+          <h4>We handle execution, not just setup</h4>
+          <p>At higher tiers we manage ongoing social posts, email campaigns, paid ads, and graphic design. The campaign focuses on winning. We run the digital operation.</p>
+        </div>
+      </div>
+      <div class="guide-point">
+        <div class="guide-point-icon">🎯</div>
+        <div class="guide-point-body">
+          <h4>Paid ads built for political advertising</h4>
+          <p>Facebook, Instagram, YouTube, and TikTok — run and optimized by people who understand campaign messaging, voter targeting, and election cycles.</p>
+        </div>
+      </div>
+      <div class="guide-point">
+        <div class="guide-point-icon">🛡️</div>
+        <div class="guide-point-body">
+          <h4>Race exclusivity at the top tier</h4>
+          <p>With Campaign Elite, we guarantee we won't take their opponent in the same contested race. The campaign gets our full digital loyalty.</p>
+        </div>
+      </div>
+      <div class="guide-point">
+        <div class="guide-point-icon">💬</div>
+        <div class="guide-point-body">
+          <h4>In-platform support at every tier</h4>
+          <p>Every plan includes in-platform tech support. Campaigns aren't left to figure it out alone — especially when something needs to be handled fast in the middle of a race.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     PACKAGES — What You're Recommending
+══════════════════════════════════════ -->
+<section class="packages">
+  <div class="packages-inner">
+
+    <div class="packages-intro">
+      <div>
+        <span class="eyebrow">What You're Recommending</span>
+        <h2 class="display">Four plans built around what campaigns actually need.</h2>
+        <p class="section-intro">Every plan starts with the same four pillars: a campaign website, a dedicated phone line, email marketing, and social media management. Higher tiers add paid advertising, graphic design, and dedicated strategy. Here's exactly what to tell a campaign when they ask.</p>
+      </div>
+      <div class="pkg-reco-note">
+        <h4>A note on recommending plans</h4>
+        <p>The right plan depends on the race's competitiveness, the campaign's budget, and how much digital management they can handle themselves. Use the "best for" notes in each card to guide your recommendation. When in doubt, Launchpad is a strong default for most local races.</p>
+      </div>
+    </div>
+
+    <div class="pkg-grid">
+
+      <!-- STARTER -->
+      <div class="pkg-card starter">
+        <div class="pkg-head">
+          <div class="pkg-head-left">
+            <span class="pkg-tier tier-starter">Campaign Starter</span>
+            <div class="pkg-name">Starter</div>
+            <div class="pkg-tag">Self-managed · Local races · Tight budgets</div>
+          </div>
+          <div class="pkg-price-block">
+            <div class="pkg-price">$99<span>/mo</span></div>
+            <div class="pkg-earn-badge">You earn $10/mo direct · $5/mo network</div>
+          </div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-pillars">
+            <span class="pkg-pillar">Website</span>
+            <span class="pkg-pillar">Phone Line</span>
+            <span class="pkg-pillar">Email</span>
+            <span class="pkg-pillar">Social</span>
+          </div>
+          <ul class="pkg-features">
+            <li><strong>Website</strong>Custom campaign site, built and hosted</li>
+            <li><strong>Phone</strong>Dedicated campaign phone line + tools</li>
+            <li><strong>Email</strong>Marketing platform — they send their own</li>
+            <li><strong>Social</strong>Scheduling tools + platform access</li>
+            <li><strong>Design</strong>Graphic templates (social posts, email headers)</li>
+            <li><strong>Support</strong>In-platform tech support + training</li>
+          </ul>
+          <div class="pkg-best-for">
+            <strong>Best for</strong>
+            Campaigns with a tech-savvy volunteer or small staff member managing digital day-to-day. They need real infrastructure — not someone to run it for them.
+          </div>
+        </div>
+      </div>
+
+      <!-- LAUNCHPAD -->
+      <div class="pkg-card launch">
+        <div class="pkg-head">
+          <div class="pkg-head-left">
+            <span class="pkg-tier tier-launch">Campaign Launchpad</span>
+            <div class="pkg-name">Launchpad</div>
+            <div class="pkg-tag">Professionally managed · Email + social done for them</div>
+          </div>
+          <div class="pkg-price-block">
+            <div class="pkg-price">$299<span>/mo</span></div>
+            <div class="pkg-earn-badge">You earn $30/mo direct · $15/mo network</div>
+          </div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-pillars">
+            <span class="pkg-pillar">Website</span>
+            <span class="pkg-pillar">Phone Line</span>
+            <span class="pkg-pillar">Email</span>
+            <span class="pkg-pillar">Social</span>
+          </div>
+          <ul class="pkg-features">
+            <li><strong>Website</strong>Built, maintained, and updated by our team</li>
+            <li><strong>Phone</strong>Campaign phone line set up and managed</li>
+            <li><strong>Email</strong>Campaigns written and sent on their behalf</li>
+            <li><strong>Social</strong>Posts written, scheduled, and published for them</li>
+            <li><strong>Design</strong>Graphics for social, email headers, event promos</li>
+            <li><strong>Support</strong>In-platform tech support + hands-on training</li>
+          </ul>
+          <div class="pkg-best-for">
+            <strong>Best for</strong>
+            Candidates who need a real digital operation but can't hire a full-time digital director. We do the work. They focus on the race.
+          </div>
+        </div>
+      </div>
+
+      <!-- COMMAND -->
+      <div class="pkg-card command">
+        <div class="pkg-head">
+          <div class="pkg-head-left">
+            <span class="pkg-tier tier-command">Campaign Command</span>
+            <div class="pkg-name">Command</div>
+            <div class="pkg-tag">Fully managed · Paid ads · Graphic design</div>
+          </div>
+          <div class="pkg-price-block">
+            <div class="pkg-price">$597<span>/mo</span></div>
+            <div class="pkg-earn-badge">You earn $60/mo direct · $30/mo network</div>
+          </div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-pillars">
+            <span class="pkg-pillar">Website</span>
+            <span class="pkg-pillar">Phone Line</span>
+            <span class="pkg-pillar">Email</span>
+            <span class="pkg-pillar">Social</span>
+            <span class="pkg-pillar">Paid Ads</span>
+            <span class="pkg-pillar">Graphic Design</span>
+          </div>
+          <ul class="pkg-features">
+            <li><strong>Website</strong>Fully managed — updated and optimized</li>
+            <li><strong>Phone</strong>Fully managed system with automations</li>
+            <li><strong>Email</strong>Full strategy and execution by our team</li>
+            <li><strong>Social</strong>Full management across all platforms</li>
+            <li><strong>Paid Ads</strong>Facebook, Instagram, YouTube, TikTok — run and optimized</li>
+            <li><strong>Design</strong>Ads, mailers, event promos, email campaigns</li>
+            <li><strong>Reporting</strong>Monthly performance report</li>
+            <li><strong>Support</strong>Priority in-platform tech support</li>
+          </ul>
+          <div class="pkg-best-for">
+            <strong>Best for</strong>
+            Competitive races where digital needs to be actively working. Everything managed by our team — including real paid advertising, not just organic.
+          </div>
+        </div>
+      </div>
+
+      <!-- ELITE -->
+      <div class="pkg-card elite">
+        <div class="pkg-head">
+          <div class="pkg-head-left">
+            <span class="pkg-tier tier-elite">Campaign Elite</span>
+            <div class="pkg-name">Elite</div>
+            <div class="pkg-tag">Dedicated strategist · Advanced ads · Race exclusivity</div>
+          </div>
+          <div class="pkg-price-block">
+            <div class="pkg-price">$797<span>/mo</span></div>
+            <div class="pkg-earn-badge">You earn $80/mo direct · $40/mo network</div>
+          </div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-pillars">
+            <span class="pkg-pillar">Website</span>
+            <span class="pkg-pillar">Phone Line</span>
+            <span class="pkg-pillar">Email</span>
+            <span class="pkg-pillar">Social</span>
+            <span class="pkg-pillar">Paid Ads</span>
+            <span class="pkg-pillar">Graphic Design</span>
+            <span class="pkg-pillar">Strategist</span>
+          </div>
+          <ul class="pkg-features">
+            <li><strong>Website</strong>Custom site + advanced features + full management</li>
+            <li><strong>Phone</strong>AI-powered campaign phone system, managed</li>
+            <li><strong>Email</strong>Advanced strategy + full execution</li>
+            <li><strong>Social</strong>Full management + advanced content strategy</li>
+            <li><strong>Paid Ads</strong>All platforms, advanced targeting, optimized weekly</li>
+            <li><strong>Design</strong>Custom original art for every campaign phase</li>
+            <li><strong>Strategist</strong>Dedicated strategist assigned to the campaign</li>
+            <li><strong>Exclusivity</strong>We don't take their opponent in the same race</li>
+          </ul>
+          <div class="pkg-best-for">
+            <strong>Best for</strong>
+            High-stakes races or well-funded campaigns where digital is mission-critical. A dedicated strategist runs the digital operation. Full commitment — we're in the race with them.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     HOW YOU EARN
+══════════════════════════════════════ -->
+<section class="earn">
+  <div class="earn-inner">
+
+    <div class="earn-header">
+      <span class="eyebrow">How You Earn</span>
+      <h2 class="display">Two income streams. Both run automatically, every month.</h2>
+      <p>Refer a campaign directly and collect 10% every month they stay. Recruit another political operative into the program and earn 5% on every campaign they refer — indefinitely, with no extra work from you.</p>
+    </div>
+
+    <div class="earn-streams">
+
+      <div class="earn-stream direct">
+        <div class="earn-stream-head">
+          <div class="earn-pct">10%</div>
+          <div class="earn-stream-head-text">
+            <h3>Stream 1 — Direct Referrals</h3>
+            <p>You refer a campaign. They sign a plan. Every month they stay, 10% of their plan price comes to you — automatically, no follow-up required.</p>
+          </div>
+        </div>
+        <div class="earn-stream-body">
+          <table class="earn-table">
+            <tr><td>Campaign Starter ($99/mo)</td><td>$10/mo</td></tr>
+            <tr><td>Campaign Launchpad ($299/mo)</td><td>$30/mo</td></tr>
+            <tr><td>Campaign Command ($597/mo)</td><td>$60/mo</td></tr>
+            <tr><td>Campaign Elite ($797/mo)</td><td>$80/mo</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="earn-stream network">
+        <div class="earn-stream-head">
+          <div class="earn-pct">5%</div>
+          <div class="earn-stream-head-text">
+            <h3>Stream 2 — Partner Network</h3>
+            <p>Recruit another consultant or party official into the program using your referral link. Every campaign they refer earns you 5% monthly — for as long as those campaigns stay.</p>
+          </div>
+        </div>
+        <div class="earn-stream-body">
+          <table class="earn-table">
+            <tr><td>Their referral on Starter ($99/mo)</td><td>$5/mo</td></tr>
+            <tr><td>Their referral on Launchpad ($299/mo)</td><td>$15/mo</td></tr>
+            <tr><td>Their referral on Command ($597/mo)</td><td>$30/mo</td></tr>
+            <tr><td>Their referral on Elite ($797/mo)</td><td>$40/mo</td></tr>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     COMMISSION TABLE
+══════════════════════════════════════ -->
+<section class="commission-section">
+  <div class="commission-inner">
+    <span class="eyebrow">Exact Amounts</span>
+    <h2 class="display">Every plan. Every commission. No estimates.</h2>
+    <p class="section-intro">Commissions begin the month after a plan activates and continue as long as the campaign stays on any paid plan.</p>
+
+    <div class="comm-table-wrap">
+      <table class="comm-table">
+        <thead>
+          <tr>
+            <th>Campaign Plan</th>
+            <th>Monthly Price</th>
+            <th>What the Campaign Gets</th>
+            <th class="col-direct">You Earn — Direct</th>
+            <th class="col-network">You Earn — Network</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="comm-plan-name">Campaign Starter</div>
+              <div class="comm-plan-desc">Self-managed · tight budgets · local races</div>
+            </td>
+            <td><span class="comm-price">$99<small style="font-family:var(--sans);font-size:13px;color:var(--light-muted)">/mo</small></span></td>
+            <td style="font-size:13px;color:var(--muted)">Website + phone + email + social platform access. Graphic templates. In-platform support.</td>
+            <td><span class="comm-direct">$10/mo</span></td>
+            <td><span class="comm-network">$5/mo</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="comm-plan-name">Campaign Launchpad</div>
+              <div class="comm-plan-desc">Professionally set up · email + social managed</div>
+            </td>
+            <td><span class="comm-price">$299<small style="font-family:var(--sans);font-size:13px;color:var(--light-muted)">/mo</small></span></td>
+            <td style="font-size:13px;color:var(--muted)">All four pillars professionally managed. Graphic design for key materials. In-platform support.</td>
+            <td><span class="comm-direct">$30/mo</span></td>
+            <td><span class="comm-network">$15/mo</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="comm-plan-name">Campaign Command</div>
+              <div class="comm-plan-desc">Fully managed · paid ads · graphic design</div>
+            </td>
+            <td><span class="comm-price">$597<small style="font-family:var(--sans);font-size:13px;color:var(--light-muted)">/mo</small></span></td>
+            <td style="font-size:13px;color:var(--muted)">Everything fully managed. Paid ads on all platforms. Graphic design for ads, mailers, and events. Monthly performance report.</td>
+            <td><span class="comm-direct">$60/mo</span></td>
+            <td><span class="comm-network">$30/mo</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="comm-plan-name">Campaign Elite</div>
+              <div class="comm-plan-desc">Dedicated strategist · advanced ads · exclusivity</div>
+            </td>
+            <td><span class="comm-price">$797<small style="font-family:var(--sans);font-size:13px;color:var(--light-muted)">/mo</small></span></td>
+            <td style="font-size:13px;color:var(--muted)">Everything in Command plus dedicated strategist, AI phone system, custom graphic design, and guaranteed race exclusivity.</td>
+            <td><span class="comm-direct">$80/mo</span></td>
+            <td><span class="comm-network">$40/mo</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="comm-note">Direct = you referred the campaign. Network = a partner you recruited referred the campaign. Network commissions go one level deep.</p>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     THE MATH
+══════════════════════════════════════ -->
+<section class="math-section">
+  <div class="math-inner">
+    <span class="eyebrow gold">The Math</span>
+    <h2>What this actually adds up to.</h2>
+    <p>No projections. Just exact monthly amounts on real plan prices, across realistic political timelines.</p>
+
+    <div class="math-scenarios">
+
+      <div class="math-card">
+        <h3>Scenario A — Direct referrals only, one election cycle</h3>
+        <p class="scenario-sub">You refer 3 candidates, all on Campaign Command ($597/mo), each running a 10-month campaign.</p>
+        <table class="math-rows">
+          <tr>
+            <td>Monthly recurring: $60/mo × 3 campaigns</td>
+            <td>$180/mo</td>
+          </tr>
+          <tr>
+            <td>Over the full 10-month election cycle</td>
+            <td>$1,800</td>
+          </tr>
+          <tr class="math-total">
+            <td>Total — one cycle, direct only</td>
+            <td>$1,800</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="math-card">
+        <h3>Scenario B — Direct + partner network, two election cycles</h3>
+        <p class="scenario-sub">You refer a county party org (year-round) + 3 candidates per cycle. You recruit 2 sub-partners, each referring 3 campaigns per cycle.</p>
+        <table class="math-rows">
+          <tr><td>Year 1 — your direct: county party org ($60 × 12 mo)</td><td>$720</td></tr>
+          <tr><td>Year 1 — your direct: 3 candidates ($60 × 10 mo each)</td><td>$1,800</td></tr>
+          <tr class="sub"><td>Year 1 — network: Sub-partner 1 (3 referrals × $30 × 10 mo)</td><td>$900</td></tr>
+          <tr class="sub"><td>Year 1 — network: Sub-partner 2 (3 referrals × $30 × 10 mo)</td><td>$900</td></tr>
+          <tr><td>Year 2 — same structure, party org continues</td><td>$4,320</td></tr>
+          <tr class="math-total">
+            <td>Total — two full election cycles</td>
+            <td>$8,640</td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+
+    <div class="math-note">
+      <strong>The compounding logic:</strong> Your direct referrals earn $60/mo each. Every sub-partner you recruit multiplies your earning surface — their three Campaign Command referrals are worth $30/mo each to you automatically. Party organizations run year-round. Winning candidates often maintain a digital presence. <strong>There is no cap.</strong>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     HOW IT WORKS
+══════════════════════════════════════ -->
+<section class="how">
+  <div class="how-inner">
+    <span class="eyebrow">The Plan</span>
+    <h2 class="display">Here's how simple this actually is.</h2>
+    <p class="section-intro">Apply once. Get your link. Make introductions you were already going to make — and earn from all of them.</p>
+
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="step-num">1</div>
+        <h4>Apply and get your link</h4>
+        <p>Instant approval. Five minutes. You get a unique referral link and a partner dashboard showing every referral, every commission, in real time.</p>
+      </div>
+      <div class="how-step">
+        <div class="step-num">2</div>
+        <h4>Refer campaigns</h4>
+        <p>Send your link, forward an email, or make a verbal introduction. When a campaign signs, you start earning $10–$80/mo depending on their plan — every month they stay.</p>
+      </div>
+      <div class="how-step">
+        <div class="step-num">3</div>
+        <h4>Recruit other partners</h4>
+        <p>Know other consultants or party officials? Share your referral link with them. When they refer campaigns, you earn 5% of those plans monthly — automatically, for as long as those campaigns stay.</p>
+      </div>
+      <div class="how-step">
+        <div class="step-num">4</div>
+        <h4>Both streams compound</h4>
+        <p>Direct commissions stack each cycle. Network commissions run automatically. Party orgs renew year-round. Income grows with every election season. No ceiling.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     TRUST
+══════════════════════════════════════ -->
+<section class="trust">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <h4>Paid on time, every time</h4>
+      <p>Commissions are calculated at the end of each month and paid by the 15th of the following month via direct deposit or check. Your dashboard shows exactly where every dollar came from.</p>
+    </div>
+    <div class="trust-item">
+      <h4>No games, no fine print</h4>
+      <p>If a campaign upgrades, your commission goes up with it. If they cancel, commissions end at the close of their final paid month. No clawbacks. No hidden minimums. No surprises.</p>
+    </div>
+    <div class="trust-item">
+      <h4>Your relationships stay yours</h4>
+      <p>We never market directly to the campaigns you refer. We don't use your referral to build our own relationship with your contacts. The introduction is yours — and so is the credit.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     CTA
+══════════════════════════════════════ -->
+<section class="cta-section" id="apply">
+  <div class="cta-inner">
+    <span class="eyebrow white">Get Started</span>
+    <h2>Ready to earn from the relationships you've already built?</h2>
+    <p>Apply once. Get your referral link. Start making introductions that pay you back — every single month, for as long as those campaigns run.</p>
+    <div class="cta-pills">
+      <span class="cta-pill">✓ Free to join</span>
+      <span class="cta-pill">✓ No selling required</span>
+      <span class="cta-pill">✓ Direct + network income</span>
+      <span class="cta-pill">✓ No cap on earnings</span>
+      <span class="cta-pill">✓ Paid by the 15th</span>
+    </div>
+    <a href="#" class="cta-btn">Apply as a Referral Partner</a>
+    <span class="cta-sub">Questions first? Email partners@becomedistinct.com</span>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     FAQ
+══════════════════════════════════════ -->
+<section class="faq">
+  <div class="faq-inner">
+    <span class="eyebrow">Common Questions</span>
+    <h2 class="display">Everything you need to know before applying.</h2>
+
+    <div class="faq-cols">
+      <div>
+        <div class="faq-item">
+          <div class="faq-q">Is there any cost to join?</div>
+          <div class="faq-a">No. Completely free. We earn when the campaigns you refer become paying clients. There are no fees, minimums, or quotas — ever.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How does sub-partner earning work exactly?</div>
+          <div class="faq-a">When you recruit someone into the program with your referral link, they become a sub-partner. They earn 10% on their direct referrals — same as you on yours. You earn an additional 5% on those same campaigns, from our side, not theirs. It goes one level deep.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can I refer campaigns I'm already consulting for?</div>
+          <div class="faq-a">Yes. If you already work with a candidate and you bring them to us, you can earn the referral commission. We'd encourage transparency with your client, but there's no restriction.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How does tracking work for verbal introductions?</div>
+          <div class="faq-a">Your unique link tracks online referrals automatically. For verbal introductions, have the candidate mention your name when they book their strategy call — we'll log it manually. When in doubt, reach out to us directly.</div>
+        </div>
+      </div>
+      <div>
+        <div class="faq-item">
+          <div class="faq-q">What if a candidate doesn't sign right away?</div>
+          <div class="faq-a">Referral tracking has a 90-day window. If someone uses your link today and signs up 60 days from now, you still get full credit. Campaign decisions take time — especially early in an election cycle.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Do commissions end when the election ends?</div>
+          <div class="faq-a">Commissions continue as long as the client stays on any paid plan. Winners often maintain a digital presence. Party organizations are year-round clients. And some candidates run again.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can I refer both Republicans and Democrats?</div>
+          <div class="faq-a">Absolutely. We work with candidates from both parties. The only restriction: once we take one candidate in a contested race, we won't take their opponent. That's our commitment to our clients — not a limit on who you can refer.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Is there a cap on how much I can earn?</div>
+          <div class="faq-a">None. Refer as many campaigns as you know. Recruit as many partners as you want. Every active campaign and sub-partner contributes to your monthly income — indefinitely, without a ceiling.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="footer-brand">DISTINCT DIGITAL SERVICES</div>
+  <div class="footer-info">Political Campaign Referral Partner Program · becomedistinct.com</div>
+  <div class="footer-contact"><a href="mailto:partners@becomedistinct.com">partners@becomedistinct.com</a></div>
+</footer>
+
+</body>
+</html>

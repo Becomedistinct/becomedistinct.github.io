@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Political & Campaign Services — Distinct Digital Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --warm: #f8f5f0;
+    --cream: #fffcf7;
+    --accent: #1d4e8f;
+    --accent-dark: #163a6b;
+    --accent-red: #b8232e;
+    --accent-red-dark: #9a1c26;
+    --muted: #6b6560;
+    --border: #e2ddd6;
+    --green: #2d8a4e;
+    --green-bg: #edf7f0;
+    --elite-bg: #0f1e35;
+    --elite-text: #f8f5f0;
+    --elite-muted: #8a96a8;
+    --elite-accent: #c9a84c;
+    --flag-red: #b8232e;
+    --flag-blue: #1d4e8f;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---- NAV BACK ---- */
+  .nav-back {
+    background: var(--ink);
+    padding: 12px 24px;
+    text-align: center;
+  }
+  .nav-back a {
+    color: #aaa;
+    font-size: 13px;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+  .nav-back a:hover { color: white; }
+
+  /* ---- HERO ---- */
+  .hero {
+    padding: 100px 24px 80px;
+    text-align: center;
+    background: var(--elite-bg);
+    border-bottom: 1px solid #1e3050;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(to right, var(--flag-red) 33%, white 33%, white 66%, var(--flag-blue) 66%);
+  }
+
+  .hero-eyebrow {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--elite-accent);
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1.15;
+    max-width: 800px;
+    margin: 0 auto 24px;
+    color: var(--elite-text);
+  }
+
+  .hero p {
+    font-size: 19px;
+    color: var(--elite-muted);
+    max-width: 620px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    background: var(--flag-red);
+    color: white;
+    padding: 16px 36px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .hero-cta:hover { background: var(--accent-red-dark); }
+
+  .hero-sub {
+    display: block;
+    margin-top: 14px;
+    font-size: 14px;
+    color: var(--elite-muted);
+  }
+
+  .hero-sub strong { color: var(--elite-accent); font-weight: 600; }
+
+  /* ---- EXCLUSIVE BANNER ---- */
+  .exclusive-banner {
+    background: var(--flag-red);
+    padding: 20px 24px;
+    text-align: center;
+  }
+
+  .exclusive-banner p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.9);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+
+  .exclusive-banner strong { color: white; }
+
+  /* ---- PROBLEM ---- */
+  .problem {
+    padding: 80px 24px;
+    background: var(--cream);
+  }
+
+  .problem-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .problem h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(28px, 3.5vw, 38px);
+    margin-bottom: 28px;
+    line-height: 1.25;
+  }
+
+  .problem p {
+    font-size: 17px;
+    color: var(--muted);
+    margin-bottom: 20px;
+    line-height: 1.75;
+  }
+
+  .problem p:last-of-type { margin-bottom: 0; }
+
+  .stat-row {
+    display: flex;
+    gap: 24px;
+    margin-top: 48px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .stat-card {
+    background: var(--warm);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px 28px;
+    flex: 1;
+    min-width: 200px;
+    max-width: 280px;
+  }
+
+  .stat-card .number {
+    font-family: 'DM Serif Display', serif;
+    font-size: 42px;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .stat-card .label {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* ---- GUIDE ---- */
+  .guide {
+    padding: 64px 24px;
+    background: var(--warm);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .guide p {
+    max-width: 640px;
+    margin: 0 auto;
+    font-size: 18px;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+
+  .guide strong { color: var(--ink); }
+
+  /* ---- CLIENT TYPES ---- */
+  .client-types {
+    padding: 64px 24px;
+    background: var(--cream);
+  }
+
+  .client-types-inner {
+    max-width: 880px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .client-types-inner .eyebrow {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .client-types-inner h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(26px, 3vw, 36px);
+    margin-bottom: 48px;
+    line-height: 1.25;
+  }
+
+  .client-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .client-card {
+    background: var(--warm);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px 24px;
+    text-align: left;
+  }
+
+  .client-icon {
+    font-size: 28px;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .client-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .client-card p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  /* ---- SECTION HEADER ---- */
+  .section-header {
+    text-align: center;
+    padding: 80px 24px 48px;
+  }
+
+  .section-header .eyebrow {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .section-header h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(28px, 3.5vw, 40px);
+    margin-bottom: 16px;
+    line-height: 1.25;
+  }
+
+  .section-header p {
+    font-size: 17px;
+    color: var(--muted);
+    max-width: 580px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* ---- BUNDLES ---- */
+  .bundles {
+    padding: 0 24px 80px;
+  }
+
+  .bundle-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .bundle-card {
+    background: white;
+    border: 2px solid var(--border);
+    border-radius: 16px;
+    padding: 40px 32px;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bundle-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+  }
+
+  .bundle-card.popular {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 1px var(--accent), 0 8px 32px rgba(29, 78, 143, 0.1);
+  }
+
+  .bundle-card.elite {
+    background: var(--elite-bg);
+    color: var(--elite-text);
+    border-color: transparent;
+  }
+
+  .badge {
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 5px 16px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .elite .badge {
+    background: var(--elite-accent);
+    color: var(--elite-bg);
+  }
+
+  .bundle-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+
+  .bundle-tagline {
+    font-size: 16px;
+    font-style: italic;
+    color: var(--muted);
+    margin-bottom: 24px;
+    min-height: 44px;
+  }
+
+  .elite .bundle-tagline { color: var(--elite-muted); }
+
+  .bundle-price {
+    margin-bottom: 20px;
+  }
+
+  .bundle-price .amount {
+    font-family: 'DM Serif Display', serif;
+    font-size: 42px;
+    color: var(--ink);
+    line-height: 1;
+  }
+
+  .bundle-price .per {
+    font-size: 15px;
+    color: var(--muted);
+    margin-left: 4px;
+  }
+
+  .elite .bundle-price .amount { color: var(--elite-text); }
+  .elite .bundle-price .per { color: var(--elite-muted); }
+
+  .bundle-price .save-note {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--green);
+    background: var(--green-bg);
+    padding: 3px 10px;
+    border-radius: 20px;
+  }
+
+  .bundle-ideal {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .elite .bundle-ideal { color: var(--elite-accent); }
+
+  .bundle-who {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 28px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .elite .bundle-who {
+    color: var(--elite-muted);
+    border-bottom-color: #1e3050;
+  }
+
+  .bundle-includes-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .elite .bundle-includes-label { color: var(--elite-accent); }
+
+  .bundle-features {
+    list-style: none;
+    margin-bottom: 32px;
+    flex-grow: 1;
+  }
+
+  .bundle-features li {
+    font-size: 14.5px;
+    padding: 6px 0;
+    padding-left: 24px;
+    position: relative;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+
+  .elite .bundle-features li { color: var(--elite-text); }
+
+  .bundle-features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--green);
+    font-weight: 700;
+  }
+
+  .elite .bundle-features li::before { color: var(--elite-accent); }
+
+  .bundle-features li.highlight { font-weight: 600; }
+
+  .bundle-cta {
+    display: block;
+    text-align: center;
+    padding: 15px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    transition: all 0.2s;
+    border: 2px solid var(--border);
+    color: var(--ink);
+    background: transparent;
+  }
+
+  .bundle-cta:hover { border-color: var(--ink); }
+
+  .bundle-card.popular .bundle-cta {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+  }
+
+  .bundle-card.popular .bundle-cta:hover {
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+  }
+
+  .elite .bundle-cta {
+    background: var(--elite-accent);
+    border-color: var(--elite-accent);
+    color: var(--elite-bg);
+  }
+
+  .elite .bundle-cta:hover {
+    background: #d9b75e;
+    border-color: #d9b75e;
+  }
+
+  /* ---- BASE TIERS ---- */
+  .base-tiers {
+    padding: 80px 24px;
+    background: var(--cream);
+    border-top: 1px solid var(--border);
+  }
+
+  .base-tiers-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .base-tiers-inner .eyebrow {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+    text-align: center;
+  }
+
+  .base-tiers-inner h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(24px, 3vw, 34px);
+    margin-bottom: 12px;
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  .base-tiers-inner > p {
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 600px;
+    margin: 0 auto 48px;
+    text-align: center;
+    line-height: 1.7;
+  }
+
+  .base-tier-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .base-tier-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 22px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .base-tier-card.highlighted {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 1px var(--accent);
+  }
+
+  .base-tier-name {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .base-tier-price {
+    font-family: 'DM Serif Display', serif;
+    font-size: 34px;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .base-tier-price .per {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  .base-tier-specs {
+    font-size: 13px;
+    color: var(--muted);
+    margin: 12px 0 16px;
+    line-height: 1.7;
+    flex-grow: 1;
+  }
+
+  .base-tier-specs strong { color: var(--ink); }
+
+  .base-tier-cta {
+    display: block;
+    text-align: center;
+    padding: 10px 16px;
+    border-radius: 7px;
+    font-weight: 600;
+    font-size: 13px;
+    text-decoration: none;
+    transition: all 0.2s;
+    border: 1.5px solid var(--border);
+    color: var(--ink);
+    background: transparent;
+  }
+
+  .base-tier-cta:hover { border-color: var(--ink); }
+
+  .base-tier-card.highlighted .base-tier-cta {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+  }
+
+  .base-tier-card.highlighted .base-tier-cta:hover {
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+  }
+
+  .addon-row {
+    display: flex;
+    gap: 16px;
+    background: var(--warm);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 28px;
+    align-items: flex-start;
+  }
+
+  .addon-label {
+    flex: 0 0 200px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-top: 2px;
+  }
+
+  .addon-cards {
+    display: flex;
+    gap: 16px;
+    flex: 1;
+    flex-wrap: wrap;
+  }
+
+  .addon-card {
+    flex: 1;
+    min-width: 220px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+  }
+
+  .addon-card h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .addon-card .addon-price {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+
+  .addon-card .addon-price .per {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  .addon-card p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ---- TIMELINE URGENCY ---- */
+  .timeline {
+    padding: 80px 24px;
+    background: var(--warm);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .timeline-inner {
+    max-width: 880px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .timeline-inner h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(26px, 3vw, 34px);
+    margin-bottom: 16px;
+  }
+
+  .timeline-inner > p {
+    font-size: 17px;
+    color: var(--muted);
+    max-width: 560px;
+    margin: 0 auto 48px;
+    line-height: 1.7;
+  }
+
+  .timeline-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    text-align: left;
+  }
+
+  .timeline-step {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+  }
+
+  .timeline-step .phase {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .timeline-step h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .timeline-step p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ---- SCARCITY ---- */
+  .scarcity {
+    padding: 64px 24px;
+    background: var(--elite-bg);
+    color: var(--elite-text);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scarcity::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(to right, var(--flag-red) 33%, white 33%, white 66%, var(--flag-blue) 66%);
+  }
+
+  .scarcity-inner {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .scarcity h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(24px, 3vw, 34px);
+    margin-bottom: 20px;
+    line-height: 1.3;
+    color: var(--elite-accent);
+  }
+
+  .scarcity p {
+    font-size: 16px;
+    color: var(--elite-muted);
+    line-height: 1.75;
+    margin-bottom: 16px;
+  }
+
+  .scarcity p:last-of-type { margin-bottom: 32px; }
+
+  .scarcity-cta {
+    display: inline-block;
+    background: var(--flag-red);
+    color: white;
+    padding: 16px 36px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .scarcity-cta:hover { background: var(--accent-red-dark); }
+
+  /* ---- HOW IT WORKS ---- */
+  .how-it-works {
+    padding: 80px 24px;
+    background: var(--cream);
+  }
+
+  .how-inner {
+    max-width: 880px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .how-inner h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(26px, 3vw, 34px);
+    margin-bottom: 48px;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    text-align: left;
+  }
+
+  .step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  .step h3 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .step p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  /* ---- CONSULT CTA ---- */
+  .consult-cta {
+    padding: 80px 24px;
+    text-align: center;
+    background: var(--warm);
+    border-top: 1px solid var(--border);
+  }
+
+  .consult-cta-inner {
+    max-width: 580px;
+    margin: 0 auto;
+  }
+
+  .consult-cta h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(26px, 3.5vw, 38px);
+    margin-bottom: 20px;
+    line-height: 1.25;
+  }
+
+  .consult-detail {
+    font-size: 17px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+
+  .consult-cta .gift-note {
+    display: inline-block;
+    background: var(--green-bg);
+    color: var(--green);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 8px;
+    margin-bottom: 32px;
+  }
+
+  .consult-btn {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    padding: 18px 44px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 17px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .consult-btn:hover { background: var(--accent-dark); }
+
+  .consult-sub {
+    display: block;
+    margin-top: 14px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  /* ---- STAKES ---- */
+  .stakes {
+    padding: 64px 24px;
+    text-align: center;
+    background: var(--elite-bg);
+  }
+
+  .stakes p {
+    font-size: 19px;
+    color: var(--elite-muted);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.75;
+    font-style: italic;
+  }
+
+  .stakes p strong {
+    color: var(--elite-accent);
+    font-style: normal;
+  }
+
+  /* ---- FAQ ---- */
+  .faq {
+    padding: 80px 24px;
+    background: var(--warm);
+    border-top: 1px solid var(--border);
+  }
+
+  .faq h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(26px, 3vw, 34px);
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .faq-list {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+    padding: 24px 0;
+  }
+
+  .faq-item:first-child { border-top: 1px solid var(--border); }
+
+  .faq-q {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .faq-a {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* ---- CAMPAIGN PILLARS ---- */
+  .campaign-pillars {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 960px;
+    margin: 0 auto 56px;
+    padding: 0 24px;
+  }
+
+  .pillar {
+    background: var(--warm);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 20px;
+    text-align: center;
+  }
+
+  .pillar-icon {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .pillar-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .pillar-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* ---- CORE FOUR FEATURES ---- */
+  .bundle-features li.core-item {
+    padding-left: 12px;
+    border-left: 2px solid var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .bundle-features li.core-item::before {
+    content: none;
+  }
+
+  .bundle-features li.core-item strong {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 3px;
+  }
+
+  .elite .bundle-features li.core-item {
+    border-left-color: var(--elite-accent);
+  }
+
+  .elite .bundle-features li.core-item strong {
+    color: var(--elite-accent);
+  }
+
+  .bundle-features li.core-item span {
+    display: block;
+    font-size: 13.5px;
+    font-weight: 400;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .elite .bundle-features li.core-item span {
+    color: var(--elite-muted);
+  }
+
+  .feature-divider {
+    list-style: none;
+    padding: 0;
+    margin: 14px 0 14px;
+    border-top: 1px solid var(--border);
+  }
+
+  .elite .feature-divider {
+    border-top-color: #1e3050;
+  }
+
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 1100px) {
+    .bundle-grid { grid-template-columns: repeat(2, 1fr); max-width: 760px; }
+  }
+
+  @media (max-width: 960px) {
+    .client-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+    .steps { grid-template-columns: 1fr; gap: 32px; }
+    .timeline-steps { grid-template-columns: 1fr 1fr; }
+    .base-tier-grid { grid-template-columns: 1fr 1fr; }
+    .addon-row { flex-direction: column; }
+    .addon-label { flex: none; }
+    .campaign-pillars { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 600px) {
+    .bundle-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+    .timeline-steps { grid-template-columns: 1fr; }
+    .stat-row { flex-direction: column; align-items: center; }
+    .base-tier-grid { grid-template-columns: 1fr; }
+    .campaign-pillars { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV BACK ============ -->
+<div class="nav-back">
+  <a href="support-plans-v2.html">← Back to Small Business Plans</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-eyebrow">Political & Campaign Digital Services</div>
+  <h1>Campaigns are won before Election Day. Start now.</h1>
+  <p>Whether you're a first-time candidate or a party committee, your digital presence is your ground game. We build the systems that get your message out, capture supporters, and keep them engaged all the way to the polls.</p>
+  <a href="#book" class="hero-cta">Schedule a campaign strategy call</a>
+  <span class="hero-sub">Plans from $99/mo. <strong>We work exclusively with one candidate per race.</strong></span>
+</section>
+
+<!-- ============ EXCLUSIVE BANNER ============ -->
+<div class="exclusive-banner">
+  <p><strong>We only take one candidate per contested race.</strong> If your opponent gets there first, we can't help you — and we won't. That's the deal.</p>
+</div>
+
+<!-- ============ PROBLEM ============ -->
+<section class="problem">
+  <div class="problem-inner">
+    <h2>Your opponent is reaching voters you're not even thinking about.</h2>
+    <p>Most local campaigns still rely on door-knocking, yard signs, and hoping the newspaper covers them. Meanwhile, the voters who decide races are being reached digitally — on their phones, in their feeds, in their inboxes — by whoever figured this out first.</p>
+    <p>You don't need a million-dollar media budget. You need a system that captures interest, follows up automatically, and makes sure every person who shows up curious leaves as a supporter. That's what we build.</p>
+    <p>And once your race is claimed, it's closed. If your opponent claims it first, this conversation never happens.</p>
+  </div>
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="number">72%</div>
+      <div class="label">of voters research candidates online before deciding — usually on mobile</div>
+    </div>
+    <div class="stat-card">
+      <div class="number">68%</div>
+      <div class="label">of campaign websites fail to capture a single email from visitors</div>
+    </div>
+    <div class="stat-card">
+      <div class="number">3×</div>
+      <div class="label">higher turnout among supporters who received a personal follow-up</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GUIDE ============ -->
+<section class="guide">
+  <p><strong>Distinct has helped candidates and political organizations across Indiana build digital systems that actually work.</strong> We're not a political consulting firm — we're the team that builds the infrastructure. The website that actually converts. The follow-up system that doesn't let a warm supporter go cold. The tools that make your campaign run like it has a full staff, even when it's just you and a few volunteers.</p>
+</section>
+
+<!-- ============ CLIENT TYPES ============ -->
+<section class="client-types">
+  <div class="client-types-inner">
+    <div class="eyebrow">Who We Work With</div>
+    <h2>From city council to county party — we've got a plan for you.</h2>
+    <div class="client-grid">
+      <div class="client-card">
+        <span class="client-icon">🗳️</span>
+        <h3>Candidates & Campaigns</h3>
+        <p>City council, county commissioner, township trustee, state house — any race where a better digital presence wins votes. We build your site, capture supporters, and keep them engaged through Election Day.</p>
+      </div>
+      <div class="client-card">
+        <span class="client-icon">🏛️</span>
+        <h3>Local Party Organizations</h3>
+        <p>County GOP and Democrat committees need a digital home too. We help you grow your email list, communicate with members, coordinate volunteers, and keep your organization sharp between election cycles.</p>
+      </div>
+      <div class="client-card">
+        <span class="client-icon">📣</span>
+        <h3>PACs & Advocacy Groups</h3>
+        <p>Issue-based organizations, ballot initiative campaigns, and advocacy groups need to reach and activate the right people fast. We build the infrastructure to capture supporters and move them to action.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PACKAGES HEADER ============ -->
+<div class="section-header" id="plans">
+  <div class="eyebrow">Campaign Service Packages</div>
+  <h2>Every plan is built around the four things campaigns actually need.</h2>
+  <p>A campaign website, a dedicated phone number, email marketing, and social media — every package includes all four. The difference is how much of it we manage for you.</p>
+</div>
+
+<!-- ============ CAMPAIGN PILLARS ============ -->
+<div class="campaign-pillars">
+  <div class="pillar">
+    <div class="pillar-icon">🌐</div>
+    <div class="pillar-title">Campaign Website</div>
+    <div class="pillar-desc">Built for you. Professional, fast, and converts visitors into supporters.</div>
+  </div>
+  <div class="pillar">
+    <div class="pillar-icon">📞</div>
+    <div class="pillar-title">Campaign Phone</div>
+    <div class="pillar-desc">Dedicated number. Missed-call text-back. AI answering at higher tiers.</div>
+  </div>
+  <div class="pillar">
+    <div class="pillar-icon">📧</div>
+    <div class="pillar-title">Email Marketing</div>
+    <div class="pillar-desc">Build your list. Stay in front of voters all the way to Election Day.</div>
+  </div>
+  <div class="pillar">
+    <div class="pillar-icon">📱</div>
+    <div class="pillar-title">Social Media</div>
+    <div class="pillar-desc">From scheduling tools to a fully managed posting operation — we handle it.</div>
+  </div>
+</div>
+
+<!-- ============ BUNDLES ============ -->
+<section class="bundles">
+  <div class="bundle-grid">
+
+    <!-- CAMPAIGN STARTER -->
+    <div class="bundle-card">
+      <div class="bundle-name">Campaign Starter</div>
+      <div class="bundle-tagline">"Everything you need to get on the map — you run the day-to-day."</div>
+      <div class="bundle-price">
+        <span class="amount">$99</span><span class="per">/mo</span>
+        <br><span class="save-note">Smart Tools included</span>
+      </div>
+      <div class="bundle-ideal">Best for: Small races, tight budgets</div>
+      <div class="bundle-who">We build and configure everything. You manage the tools yourself with our training and templates — no technical knowledge required.</div>
+      <div class="bundle-includes-label">What's included</div>
+      <ul class="bundle-features">
+        <li class="core-item"><strong>Website</strong><span>Built and live fast · 5 update requests/mo · 5-day turnaround</span></li>
+        <li class="core-item"><strong>Phone</strong><span>Dedicated campaign number · Missed-call auto text-back</span></li>
+        <li class="core-item"><strong>Email Marketing</strong><span>Email list tool + pre-written templates — you send</span></li>
+        <li class="core-item"><strong>Social Media</strong><span>Post scheduling tool — you manage your own posting</span></li>
+        <li class="feature-divider"></li>
+        <li>Supporter CRM — every contact in one place</li>
+        <li>Supporter capture form on your site</li>
+        <li>Campaign graphic templates — social posts, email headers</li>
+        <li>In-platform tech support</li>
+        <li>Onboarding and training so your team knows the system</li>
+      </ul>
+      <a href="#book" class="bundle-cta">Schedule a strategy call</a>
+    </div>
+
+    <!-- CAMPAIGN LAUNCHPAD -->
+    <div class="bundle-card">
+      <div class="bundle-name">Campaign Launchpad</div>
+      <div class="bundle-tagline">"A full digital setup — professionally built and ready to run."</div>
+      <div class="bundle-price">
+        <span class="amount">$299</span><span class="per">/mo</span>
+        <br><span class="save-note">Saves $49/mo vs. à la carte</span>
+      </div>
+      <div class="bundle-ideal">Best for: First-time candidates, smaller races</div>
+      <div class="bundle-who">We set up everything and hand you the keys — a real website, a working phone line, email ready to go, and social tools configured. You run the day-to-day with full training and support.</div>
+      <div class="bundle-includes-label">What's included</div>
+      <ul class="bundle-features">
+        <li class="core-item"><strong>Website</strong><span>Full design, fast launch · 10 update requests/mo (rollover) · 3-day turnaround</span></li>
+        <li class="core-item"><strong>Phone</strong><span>Dedicated campaign number · Missed-call text-back fully configured</span></li>
+        <li class="core-item"><strong>Email Marketing</strong><span>List builder + pre-written sequences for key campaign moments — you send</span></li>
+        <li class="core-item"><strong>Social Media</strong><span>Scheduler + post graphic templates — you manage your posting</span></li>
+        <li class="feature-divider"></li>
+        <li>Graphic design — social posts, email headers, event graphics</li>
+        <li>Supporter capture form + volunteer sign-up page</li>
+        <li>In-platform tech support</li>
+        <li>Hands-on training — your team knows exactly how to use it</li>
+      </ul>
+      <a href="#book" class="bundle-cta">Schedule a strategy call</a>
+    </div>
+
+    <!-- CAMPAIGN COMMAND -->
+    <div class="bundle-card popular">
+      <div class="badge">Most Popular</div>
+      <div class="bundle-name">Campaign Command</div>
+      <div class="bundle-tagline">"We manage your website, phone, email, and social — you focus on voters."</div>
+      <div class="bundle-price">
+        <span class="amount">$597</span><span class="per">/mo</span>
+        <br><span class="save-note">Saves $101/mo vs. à la carte</span>
+      </div>
+      <div class="bundle-ideal">Best for: Competitive races, party orgs, PACs</div>
+      <div class="bundle-who">You can't afford for your digital operation to be an afterthought. We handle everything — so you stay on voters, events, and fundraising.</div>
+      <div class="bundle-includes-label">What's included</div>
+      <ul class="bundle-features">
+        <li class="core-item"><strong>Website</strong><span>Unlimited updates · 48-hr turnaround · Fully managed for you</span></li>
+        <li class="core-item"><strong>Phone</strong><span>Campaign line managed · AI chatbot on your site answers voters 24/7</span></li>
+        <li class="core-item"><strong>Email Marketing</strong><span>We write and send all campaigns · Supporter list fully managed</span></li>
+        <li class="core-item"><strong>Social Media</strong><span>We post consistently — on-message, every week, handled for you</span></li>
+        <li class="feature-divider"></li>
+        <li class="highlight">Paid ads management — Facebook, Instagram, YouTube, TikTok</li>
+        <li>Graphic design — social ads, email campaigns, mailers, event promos</li>
+        <li>Automated supporter follow-up sequences</li>
+        <li>Event promotion and RSVP management</li>
+        <li>In-platform priority tech support</li>
+        <li>Monthly performance report</li>
+      </ul>
+      <a href="#book" class="bundle-cta">Schedule a strategy call</a>
+    </div>
+
+    <!-- CAMPAIGN ELITE -->
+    <div class="bundle-card elite">
+      <div class="badge">One Race. One Candidate.</div>
+      <div class="bundle-name">Campaign Elite</div>
+      <div class="bundle-tagline">"The full operation — AI phone, GOTV email, daily social, and a strategist who knows your race."</div>
+      <div class="bundle-price">
+        <span class="amount">$797</span><span class="per">/mo</span>
+        <br><span class="save-note">Saves $51/mo vs. à la carte</span>
+      </div>
+      <div class="bundle-ideal">Best for: High-stakes races where winning is the only option</div>
+      <div class="bundle-who">Every tool, fully managed, with a dedicated strategist and race exclusivity. Your opponent literally cannot have this — once you're in, we're closed to their side.</div>
+      <div class="bundle-includes-label">What's included</div>
+      <ul class="bundle-features">
+        <li class="core-item"><strong>Website</strong><span>Priority unlimited updates · 24-hr turnaround · Custom content for every campaign phase</span></li>
+        <li class="core-item"><strong>Phone</strong><span>AI voice answering your campaign line 24/7 · Advanced call-to-action automations</span></li>
+        <li class="core-item"><strong>Email Marketing</strong><span>Full GOTV sequences · Donor follow-up · Every campaign written and managed for you</span></li>
+        <li class="core-item"><strong>Social Media</strong><span>Daily posting · Custom original graphics · Full managed presence through Election Day</span></li>
+        <li class="feature-divider"></li>
+        <li class="highlight">Advanced paid ads management — all platforms, fully optimized</li>
+        <li>Custom graphic design — original art for every campaign phase</li>
+        <li class="highlight">Dedicated strategist who knows your race inside and out</li>
+        <li>Advanced supporter nurture and activation automations</li>
+        <li>Dedicated in-platform tech support</li>
+        <li>Monthly in-depth strategy review</li>
+        <li class="highlight">Full race exclusivity — we don't work for your opponent, period</li>
+      </ul>
+      <a href="#book" class="bundle-cta">Check race availability</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ TIMELINE ============ -->
+<section class="timeline">
+  <div class="timeline-inner">
+    <h2>Campaigns have a deadline. Your digital operation should match the pace.</h2>
+    <p>Here's how we think about the campaign calendar — and how to get maximum value at each stage.</p>
+    <div class="timeline-steps">
+      <div class="timeline-step">
+        <div class="phase">Phase 1 · Announcement</div>
+        <h3>Launch fast. Look credible.</h3>
+        <p>Get a professional site live within days. Start capturing supporter names and emails from day one. Every person who hears your announcement should be able to find you and sign up immediately.</p>
+      </div>
+      <div class="timeline-step">
+        <div class="phase">Phase 2 · Awareness</div>
+        <h3>Grow your list. Warm your base.</h3>
+        <p>Consistent social posting, email communication, and automated follow-up build your supporter list and keep early believers engaged. This is what separates organized campaigns from random ones.</p>
+      </div>
+      <div class="timeline-step">
+        <div class="phase">Phase 3 · Closing Push</div>
+        <h3>Activate. Persuade. Convert.</h3>
+        <p>Targeted text and email sequences to your full supporter list. GOTV messaging. Event promotion. Every tool working together to move your supporters from engaged to activated.</p>
+      </div>
+      <div class="timeline-step">
+        <div class="phase">Phase 4 · Election Day</div>
+        <h3>Remind. Mobilize. Win.</h3>
+        <p>Day-of text reminders, volunteer coordination tools, and real-time supporter communication so nothing is left to chance on the day that matters most.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCARCITY ============ -->
+<section class="scarcity">
+  <div class="scarcity-inner">
+    <h2>We don't work for both sides of any race. Ever.</h2>
+    <p>Campaign Elite — and all of our political work — is exclusive by race. If you're running for city council in Greencastle and you work with us, we will not take your opponent as a client. Not at any price. Not in any form.</p>
+    <p>That's not a marketing line. It's the only way we can do this work with integrity — and it's the only way you can trust that everything we build is working for you and no one else.</p>
+    <p>Once a race is claimed, it's closed. Check now before your opponent does.</p>
+    <a href="#book" class="scarcity-cta">Check if your race is available</a>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="how-it-works">
+  <div class="how-inner">
+    <h2>Here's how we get started.</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Strategy call — free, no commitment</h3>
+        <p>We spend 30–45 minutes learning about your race: the district, your goals, your timeline, and your digital situation. We'll tell you honestly what you need and which package fits. You'll walk away with a free digital assessment of your current presence either way.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>We claim your race and get to work</h3>
+        <p>Once you're in, your race is locked. We get your site live fast, build your supporter capture system, and set up your follow-up sequences before you announce anything. Speed matters early.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Your digital operation runs on autopilot</h3>
+        <p>While you're knocking doors and attending forums, your digital system is working 24/7 — capturing new supporters, following up automatically, and keeping your base warm all the way through Election Day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MAIN CTA ============ -->
+<section class="consult-cta" id="book">
+  <div class="consult-cta-inner">
+    <h2>Let's talk about your race before someone else does.</h2>
+    <p class="consult-detail">Book a free 30-minute strategy call. We'll look at your race, your timeline, and what it would take to build the digital operation that gives you a real edge.</p>
+    <p class="consult-detail">You'll get a free digital assessment of your current online presence — and a clear plan for what needs to happen before your next announcement.</p>
+    <div class="gift-note">🗳️ Free digital assessment — yours just for booking</div>
+    <br>
+    <a href="#" class="consult-btn">Schedule Your Strategy Call</a>
+    <span class="consult-sub">30–45 minutes · No obligation · Free digital assessment included</span>
+  </div>
+</section>
+
+<!-- ============ STAKES ============ -->
+<section class="stakes">
+  <p>Every day you wait is a day your opponent could be getting these tools instead. <strong>Races are won before most people start paying attention.</strong> The systems you build now are what make the difference in the final stretch.</p>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq">
+  <h2>Common questions</h2>
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <div class="faq-q">What kinds of races do you work with?</div>
+      <div class="faq-a">Any local or regional race — city council, county commissioner, township trustee, school board, state house, state senate. We focus on Indiana but can discuss other markets. We also work with county party committees and ballot initiative campaigns regardless of party.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Do you work with one party or both?</div>
+      <div class="faq-a">We work with both Republicans and Democrats. Our job is not to pick winners based on ideology — it's to build the best digital infrastructure for whichever candidate gets there first. In any given race, we work with only one side. Full stop.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What if I'm running for the first time and don't know much about digital?</div>
+      <div class="faq-a">That's most of our political clients. You don't need to know anything about websites, email marketing, or automation. That's our job. Campaign Launchpad is built specifically for candidates who want a solid digital foundation without needing to become a tech person. We set it up, train you or your volunteer to manage it, and you focus on the race.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">How quickly can you get a campaign site live?</div>
+      <div class="faq-a">We can have a fully functional, professional campaign website live in 3–5 business days once we have your content, headshots, and messaging. For Campaign Elite clients, we prioritize even faster launches. Announcements shouldn't be held back by slow tech.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">How does the race exclusivity actually work?</div>
+      <div class="faq-a">Once you sign with us, we mark your race as claimed in our system. We will not accept any inquiry from another candidate in the same race — at any package level, at any price. This applies for the duration of the campaign. If your race is already claimed by another candidate, we'll let you know on the strategy call and unfortunately cannot take you on.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What happens to the website and data after the election?</div>
+      <div class="faq-a">You own everything. Your domain, your email list, your supporter data — all of it is yours. If you win, we can transition your campaign site into an official government/representative site. If you plan to run again, we can keep the infrastructure warm at a reduced rate between cycles.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Is there a contract?</div>
+      <div class="faq-a">Political packages are typically structured around the campaign cycle with a defined timeline rather than month-to-month. We'll walk through the terms on your strategy call — but we keep it simple and fair. No surprises.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">We're a county party committee, not a campaign. Can you help us?</div>
+      <div class="faq-a">Absolutely. Party committees benefit from all the same infrastructure: a clean website, an email list, event promotion tools, and consistent communication with members. Campaign Command works well for most committees as an ongoing retainer. Book a call and we'll figure out what makes sense for your organization's budget and goals.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What's the difference between the plans?</div>
+      <div class="faq-a">Every plan includes the same four core services — a campaign website, a dedicated phone number, email marketing tools, and social media tools. The difference is how much we manage for you. Campaign Starter ($99/mo): we build and configure everything, you run it yourself. Campaign Launchpad ($299/mo): more website support, pre-written email sequences, and scheduling templates — you're still managing it with better tools. Campaign Command ($597/mo): we take over — we write and send your emails, manage your social posting, and handle your supporter follow-up so nothing slips. Campaign Elite ($797/mo): the full operation — AI phone answering, GOTV email sequences, daily social with custom graphics, a dedicated strategist, and race exclusivity. You can upgrade at any point in the campaign.</div>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
